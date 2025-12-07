@@ -115,3 +115,6 @@ button {
     height: auto;
     
 }
+mat-icon {
+  font-size: 28px;
+}
