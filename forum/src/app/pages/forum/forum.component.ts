@@ -61,4 +61,7 @@ export class ForumComponent implements OnInit {
       }, 1500); 
     }
   }
+  IrParaFaqs() {
+        this.router.navigate(['/faqs']);
+    }
 }

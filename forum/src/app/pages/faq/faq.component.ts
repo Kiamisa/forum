@@ -5,30 +5,30 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
-
-import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { PdfDownloadService } from '../../services/pdfdownload.service';
+
+import { Router } from '@angular/router';
 @Component({
-    selector: 'app-curso',
-    templateUrl: './curso.component.html',
-    styleUrls: ['./curso.component.css'],
+    selector: 'app-faqs',
+    templateUrl: './faq.component.html',
+    styleUrls: ['./faq.component.css'],
     standalone: true,
     imports: [MatSidenavModule, MatToolbarModule, MatIconModule, MatButtonModule, MatListModule]
 })
-export class CursoComponent implements OnInit {
-    frases: SafeHtml[] = [];
+export class FaqsComponent implements OnInit {
+          frases: SafeHtml[] = [];
 
-    rawFrases: string[] = [
-        '<strong>Bem-vindo ao curso de Engenharia de Computação na UEMA</strong>'
-        ];
-    constructor(private router: Router, private sanitizer: DomSanitizer, private http: HttpClient, private pdfService: PdfDownloadService) { }
+  rawFrases: string[] = [
+    '<strong>Perguntas Frequentes (FAQ\'s)</strong>'
+  ];
+    constructor(private router: Router, private sanitizer: DomSanitizer, private pdfDownloadService: PdfDownloadService, private http: HttpClient) { }
     textoDigitado: SafeHtml = '';
     indiceFrase = 0;
     indiceLetra = 0;
     opened: boolean = true;
     ngOnInit() {
-        this.digitarFrase();
+    this.digitarFrase();
 }
     VoltarHome() {
         this.router.navigate(['/']);
@@ -42,39 +42,9 @@ export class CursoComponent implements OnInit {
     VoltarForum() {
         this.router.navigate(['/forum']);
     }
-    IrParaEngComp() {
-        this.router.navigate(['/engcomp']);
-    }
     IrParaFaqs() {
         this.router.navigate(['/faqs']);
     }
-    download1() {
-  this.pdfService.download('cursos/1.pdf', '1.pdf');
-}
-    download2() {
-  this.pdfService.download('cursos/2.pdf', '2.pdf');
-}
-    download3() {
-  this.pdfService.download('cursos/3.pdf', '3.pdf');
-}
-    download4() {
-  this.pdfService.download('cursos/4.pdf', '4.pdf');
-}
-    download5() {
-  this.pdfService.download('cursos/5.pdf', '5.pdf');
-}
-    download6() {
-  this.pdfService.download('cursos/6.pdf', '6.pdf');
-}
-    download7() {
-  this.pdfService.download('cursos/7.pdf', '7.pdf');
-}
-    download8() {
-  this.pdfService.download('cursos/8.pdf', '8.pdf');
-}
-    download9() {
-  this.pdfService.download('cursos/9.pdf', '9.pdf');
-}
         digitarFrase() {
     const fraseAtual = this.rawFrases[this.indiceFrase];
 
@@ -96,4 +66,7 @@ export class CursoComponent implements OnInit {
       }, 1500); 
     }
   }
+  download() {
+  this.pdfDownloadService.download('cursos/10.pdf', '10.pdf');
+}
 }

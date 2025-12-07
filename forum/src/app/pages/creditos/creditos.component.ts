@@ -64,4 +64,7 @@ export class CreditosComponent implements OnInit {
       }, 1500); 
     }
   }
+    IrParaFaqs() {
+        this.router.navigate(['/faqs']);
+    }
 }
