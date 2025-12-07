@@ -41,8 +41,6 @@
 .header {
     font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 3rem;
-    padding: 40px;
     gap: 50px;
     animation: fadeSlideUp 0.7s ease-out forwards;
 }
