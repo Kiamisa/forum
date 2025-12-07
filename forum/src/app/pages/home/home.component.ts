@@ -1,46 +1,56 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  trigger,
-  transition,
-  style,
-  animate
-} from '@angular/animations';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
+import { AuthService } from '../../services/auth.service';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { PdfDownloadService } from '../../services/pdfdownload.service';
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css'],
     standalone: true,
-    imports: [CommonModule]
+    imports: [CommonModule, HttpClientModule, ReactiveFormsModule]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements AfterViewInit {
       frases: SafeHtml[] = [];
 
   rawFrases: string[] = [
+    '  ',
+    '',
     '<strong>Bem vindo</strong>',
     '<strong>O curso de engenharia da computação sempre terá bastante <span class="shine">potencial.</span></strong>',
     '<strong>Por isso, decidi fazer essa plataforma para compartilharmos nossas ideias</strong>',
-    '<strong>Esse é um projeto para os alunos, por alunos,sempre alunos</strong>',
+    '<strong>Esse é um projeto para os alunos, por alunos, sempre alunos</strong>',
     '<strong>Junte-se a nós e faça parte dessa comunidade incrível!</strong>',
+    '   ',
     ''
   ];
-
-
-  
-    constructor(private router: Router, private sanitizer: DomSanitizer) { }
+    loginForm!: FormGroup;
+    constructor(
+      private router: Router, private sanitizer: DomSanitizer,private authService: AuthService,
+    private loginService: LoginService
+    ) {
+        this.loginForm = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(6)])
+    });  
+    }
     indice = 0;
     mostrarFormulario = false;
+    ngAfterViewInit() {
+  this.frases = this.rawFrases.map(f =>
+    this.sanitizer.bypassSecurityTrustHtml(f)
+  );
 
-    ngOnInit() {
-        this.trocarAutomaticamente();
-        this.frases = this.rawFrases.map(f =>
-            this.sanitizer.bypassSecurityTrustHtml(f)
-    );
-        this.digitarFrase();
-    }
+  setTimeout(() => {
+    this.trocarAutomaticamente();
+    this.digitarFrase();
+  });
+}
+
     nome = "";
     email = "";
     senha = "";
@@ -89,4 +99,25 @@ export class HomeComponent implements OnInit {
       }, 1500); 
     }
   }
+   submit() {
+  if (this.loginForm.valid) {
+    const { email, password } = this.loginForm.value;
+
+    this.loginService.login(email, password).subscribe({
+      next: () => {
+        alert("Login realizado com sucesso!");
+        
+        localStorage.setItem('logged', 'true');
+        
+        this.authService.setUserEmail(email);
+        this.router.navigate(['/forum'], { state: { email } });
+      },
+      error: () => {
+        alert("Credenciais inválidas. Tente novamente.");
+      }
+    });
+  } else {
+    alert("Preencha todos os campos corretamente.");
+  }
+}
 }

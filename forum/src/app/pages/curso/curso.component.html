@@ -1,0 +1,149 @@
+
+<mat-sidenav-container class="sidenav-container">
+  <!-- SideNav -->
+  <mat-sidenav #drawer mode="side" class="sidenav" [(opened)]="opened">
+    <mat-nav-list>
+      <a mat-list-item (click)="VoltarForum()"> Inicio</a>
+      <a mat-list-item (click)="IrParaCurso()"> Curso</a>
+      <a mat-list-item (click)="IrParaCreditos()"> Creditos</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="toolbar">
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="username">Fórum do Curso de EngComp</span>
+      <span class="flex-spacer"></span>
+      <span class="username"></span>
+
+      <button mat-icon-button (click)="VoltarHome()">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-toolbar>
+    <div class="header">
+        <div class="Bemvindo">
+      <h1>Bem-vindo ao curso de Engenharia de Computação na UEMA</h1>
+      </div>
+      <p>Sabemos como é, entrar na faculdade que você tanto sonhou é uma coisa divertida, e sempre será um marco diferencial à sua profissionalidade.
+        <br>Aqui você encontrará como estudar corretamente e as informações de cada semestre do curso de Engenharia da Computação na Universidade Estadual do Maranhão.
+        <br>Se caso esteja nervoso, ansioso, não se preocupe, você ainda tem muito chão para percorrer.
+        <br>Nós como veteranos criamos este site para guiar vocês e ter certeza que todos consigam se formar nesse curso dificil.
+        <br>Você não está sozinho nessa jornada, sempre colocaremos mais informações aqui.
+      </p>
+      <h2 class="Bemvindo">Estrutura do Curso</h2>
+      <p>Nesta plataforma teremos as informações para cada semestre de um curso, incluindo metodologias, e como cada semestre tende a funcionar na maioria.</p>
+      <p>Temos no total 10 semestres, que se torna 5 anos de pura prática da engenharia da computação</p>
+      <p>No começo você começará com as disciplinas fundamentais para exercitar seus conhecimentos para os próximos degrais de profissionalidade.</p>
+          <section class="know-more3" id="know-more3">
+  <div class="text">
+    <h2>Cada Semestre abaixo:</h2>
+    <div class="grid-container">
+              <div class="book-card">
+        <div class="book-image">
+          <img src="/img/1.jpg" alt="Introdução ao Curso">
+        </div>
+        <div class="book-content">
+          <h3>1° Semestre</h3>
+          <p>O primeiro passo.</p>
+          <button class="btn" (click)="download1()">Ver 1° Semestre</button>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-image">
+          <img src="/img/2.jpg" alt="Bisseção">
+        </div>
+        <div class="book-content">
+          <h3>2° Semestre</h3>
+          <p>A segunda etapa do curso, também fundamental para todo o curso.</p>
+          <button class="btn" (click)="download2()">Ver 2° Semestre</button>
+        </div>
+      </div>
+        <div class="book-card">
+        <div class="book-image">
+          <img src="/img/3.jpg" alt="Bisseção">
+        </div>
+        <div class="book-content">
+          <h3>3° Semestre</h3>
+          <p>Conhecido como uns dos semestres mais essenciais para a formação</p>
+          <button class="btn" (click)="download3()">Ver 3° Semestre</button>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-image">
+          <img src="/img/4.jpg" alt="Bisseção">
+        </div>
+        <div class="book-content">
+          <h3>4° Semestre</h3>
+          <p>EDA, Circuitos Elétricos...</p>
+          <button class="btn" (click)="download4()">Ver 4° Semestre</button>
+        </div>
+      </div>
+      <!--Partes do 5° Semestre -->
+      <div class="book-card">
+        <div class="book-image">
+          <img src="/img/5.jpg" alt="Bisseção">
+        </div>
+        <div class="book-content">
+          <h3>5° Semestre</h3>
+          <p>P.O.O, Banco de Dados, Redes...</p>
+          <button class="btn" (click)="download5()">Ver 5° Semestre</button>
+        </div>
+      </div>
+            <div class="book-card">
+        <div class="book-image">
+          <img src="/img/6.jpg" alt="Bisseção">
+        </div>
+        <div class="book-content">
+          <h3>6° Semestre</h3>
+          <p>Principios de Comunicações, Transformações em Z, Engenharia Eletromagnética...</p>
+          <button class="btn" (click)="download6()">Ver 6° Semestre</button>
+        </div>
+      </div>
+        <div class="book-card">
+        <div class="book-image">
+          <img src="/img/7.jpg" alt="Bisseção">
+        </div>
+        <div class="book-content">
+          <h3>7° Semestre</h3>
+          <p>Inteligência Artificial, Teoria da Computação e Compiladores...</p>
+          <button class="btn" (click)="download7()">Ver 7° Semestre</button>
+        </div>
+      </div>
+        <div class="book-card">
+        <div class="book-image">
+          <img src="/img/8.jpg" alt="Bisseção">
+        </div>
+        <div class="book-content">
+          <h3>8° Semestre</h3>
+          <p>Sistemas Inteligentes, Gestão de Projetos, estamos quase perto da formatura.</p>
+          <button class="btn" (click)="download8()">Ver 8° Semestre</button>
+        </div>
+      </div>
+        <div class="book-card">
+        <div class="book-image">
+          <img src="/img/9.png" alt="Bisseção">
+        </div>
+        <div class="book-content">
+          <h3>9° Semestre</h3>
+          <p>Primeira parte do TCC, e Sistemas de Comunicações Móveis...</p>
+          <button class="btn" (click)="download9()">Ver 9° Semestre</button>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-image">
+          <img src="/img/10.jpeg" alt="Bisseção">
+        </div>
+        <div class="book-content">
+          <h3>10° Semestre</h3>
+          <p>Neste sentido, apenas terá o TCC e algumas opicionais</p>
+        </div>
+      </div>
+      <!--Essa é a parte final-->
+    </div>
+  </div>
+</section>
+    </div>
+  </mat-sidenav-content>
+  
+</mat-sidenav-container>
