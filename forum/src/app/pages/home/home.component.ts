@@ -32,6 +32,7 @@ export class HomeComponent implements AfterViewInit {
     ''
   ];
     loginForm!: FormGroup;
+    showButton = false;
     constructor(
       private router: Router, private sanitizer: DomSanitizer,private authService: AuthService,
     private loginService: LoginService
@@ -52,6 +53,9 @@ export class HomeComponent implements AfterViewInit {
     this.trocarAutomaticamente();
     this.digitarFrase();
   });
+    setTimeout(() => {
+    this.showButton = true;
+  }, 6000);
 }
     textoDigitado: SafeHtml = '';
     indiceFrase = 0;
