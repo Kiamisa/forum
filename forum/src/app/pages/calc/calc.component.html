@@ -1,0 +1,47 @@
+
+<mat-sidenav-container class="sidenav-container">
+  <!-- SideNav -->
+  <mat-sidenav #drawer mode="side" class="sidenav" [(opened)]="opened">
+    <mat-nav-list>
+      <a mat-list-item (click)="VoltarForum()" class="white"><mat-icon>home</mat-icon> Inicio</a>
+      <a mat-list-item (click)="IrParaVida()" class="white"><mat-icon>school</mat-icon> Vida no Curso</a>
+      <a mat-list-item (click)="IrParaCurso()" class="white"><mat-icon>book</mat-icon> Curso</a>
+      <a mat-list-item (click)="IrParaTurmas()" class="white"><mat-icon>group</mat-icon> Turmas</a>
+      <a mat-list-item (click)="IrParaFaqs()" class="white"><mat-icon>help</mat-icon> Dúvidas Frequentes</a>
+      <a mat-list-item (click)="IrParaCreditos()" class="white"><mat-icon>person</mat-icon> Créditos</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="toolbar">
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="username">Fórum do Curso de EngComp</span>
+      <span class="flex-spacer"></span>
+      <span class="username"></span>
+
+      <button mat-icon-button (click)="VoltarHome()">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-toolbar>
+    <div class="header">
+      <div class="Bemvindo">
+              <div class="frase fade-slide-up"  [innerHTML]="textoDigitado">
+              </div>
+        <img src="/img/something.png" class="gif" alt="yknow">
+      </div>
+      <p>Só por que está aqui não quer dizer que não passou.</p>
+    </div>
+<form (ngSubmit)="calcular()">
+    <h2>Nota para cálcular se você passou, vai de final, ou não.</h2>
+  <input type="number" [(ngModel)]="nota1" name="nota1" placeholder="Nota da 1ª prova">
+  <input type="number" [(ngModel)]="nota2" name="nota2" placeholder="Nota da 2ª prova">
+  <input type="number" [(ngModel)]="nota3" name="nota3" placeholder="Nota da 3ª prova">
+
+  <button type="submit">Calcular</button>
+  <p>{{ resultado }}</p>
+</form>
+
+  </mat-sidenav-content>
+  
+</mat-sidenav-container>

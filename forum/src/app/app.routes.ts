@@ -8,6 +8,7 @@ import { FaqsComponent } from './pages/faq/faq.component';
 import { TurmasComponent } from './pages/turmas/turmas.component';
 import { VidaComponent } from './pages/vida/vida.component';
 import { ErrorComponent } from './pages/error/error.component';
+import { CalcComponent } from './pages/calc/calc.component';
 export const routes: Routes = [
     { 
     path: '', 
@@ -33,6 +34,10 @@ export const routes: Routes = [
     {
         path: 'faqs',
         component: FaqsComponent
+    },
+    {
+        path: 'faqs/calc',
+        component: CalcComponent
     },
     {
         path: 'turmas',
