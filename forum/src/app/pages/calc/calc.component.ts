@@ -83,7 +83,7 @@ export class CalcComponent implements OnInit {
     calcular() {
   const soma = this.nota1 + this.nota2 + this.nota3;
   const media = (this.nota1 + this.nota2 + this.nota3)/3;
-  if (soma > 21) {
+  if (soma >= 21) {
     this.resultado = `Parabéns, passou! Uhul 🎉 Média ${media}`;
     return;
   }
