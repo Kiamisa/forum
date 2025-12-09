@@ -83,4 +83,7 @@ export class VidaComponent implements OnInit {
     IrParaTurmas() {
         this.router.navigate(['/turmas']);
     }
+    abrirSite(url: string): void {
+  window.open(url, "_blank");
+}
 }

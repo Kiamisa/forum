@@ -86,4 +86,7 @@ export class FaqsComponent implements OnInit {
     IrParaCalc() {
         this.router.navigate(['/faqs/calc']);
     }
+    abrirSite(url: string): void {
+  window.open(url, "_blank");
+}
 }

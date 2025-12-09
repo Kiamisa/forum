@@ -110,4 +110,7 @@ export class CursoComponent implements OnInit {
     IrParaVida() {
         this.router.navigate(['/vida']);
     }
+    abrirSite(url: string): void {
+  window.open(url, "_blank");
+}
 }

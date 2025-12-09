@@ -83,4 +83,7 @@ export class TurmasComponent implements OnInit {
   download() {
   this.pdfDownloadService.download('cursos/10.pdf', '10.pdf');
 }
+abrirSite(url: string): void {
+  window.open(url, "_blank");
+}
 }

@@ -112,4 +112,7 @@ export class CalcComponent implements OnInit {
     return;
   }
 }
+abrirSite(url: string): void {
+  window.open(url, "_blank");
+}
 }

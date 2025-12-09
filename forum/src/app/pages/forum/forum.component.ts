@@ -84,4 +84,7 @@ export class ForumComponent implements OnInit {
     const cardWidth = container.querySelector('.book-card').offsetWidth + 20;
     container.scrollLeft += direction * cardWidth;
   }
+  abrirSite(url: string): void {
+  window.open(url, "_blank");
+}
 }
