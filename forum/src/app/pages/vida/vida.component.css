@@ -121,7 +121,6 @@ button {
   display: flex;
   color: #f3f3f3;
   animation: fadeSlideUp 0.7s ease-out forwards;
-  display: inline-block;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 }
 .frase::after {

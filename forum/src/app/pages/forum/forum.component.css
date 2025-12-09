@@ -89,6 +89,17 @@ button {
   background-size: cover;
 }
 
+.btn2 {
+  padding: 10px;
+  gap: 10px;
+  max-width: 300px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  background: #2B3C50;
+  color: #f3f3f3;
+}
 
 @keyframes fadeSlideUp {
   0% {

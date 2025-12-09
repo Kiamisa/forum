@@ -52,6 +52,17 @@ a {
     font-weight: 600;
     font-size: 1rem;
   }
+  .btn2 {
+  padding: 10px;
+  gap: 10px;
+  max-width: 300px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  background: #2B3C50;
+  color: #f3f3f3;
+}
 
 .flex-spacer {
   flex: 1 1 auto;

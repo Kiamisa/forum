@@ -7,6 +7,7 @@
   text-align: center;
   min-height: 90vh;
   border-radius: 30px;
+  overflow-y: hidden;
 }
 .form {
     display: flex;
@@ -19,6 +20,7 @@
     width: 200px;
     height: auto;
     animation: fadeSlideUp 0.7s ease-out forwards;
+    transform-origin: center;
 }
 .frase {
   font-size: 2rem;
@@ -30,6 +32,7 @@
   color: #333;
   animation: fadeSlideUp 0.7s ease-out forwards;
   display: inline-block;
+  transform-origin: center;
 }
 .frase::after {
   content: '|';
@@ -56,53 +59,41 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 800px;
-  gap: 10px;
-  animation: fadeSlideUp 0.7s ease-out forwards;
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-}
-.register {
-  display: flex;
   flex-direction: column;
-  margin: 50px;
-  width: 600px;
-  gap: 10px;
+  font-size: 1.5rem;
+  color: #fff;
+  width: 200px;
   animation: fadeSlideUp 0.7s ease-out forwards;
+  text-shadow: 0 2px 6px rgba(225, 225, 225, 0.8);
 }
-.login {
+.formulario2 {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  display: flex;
-  margin: 50px;
+  justify-content: space-between;
   flex-direction: column;
-  width: 800px;
-  gap: 10px;
-  background-color: #fff;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  width: 500px;
+  gap: 10px;
   animation: fadeSlideUp 0.7s ease-out forwards;
+  border-radius: 8px;
+  overflow-y: hidden;
+  background-image: url("/img/saoluis.jpg");
+  background-size: cover;
+  background-position: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
-
-.formulario input {
+  .btn2 {
   padding: 10px;
-  border-radius: 6px;
+  max-width: 300px;
   border: none;
-  outline: none;
-}
-button {
-  padding: 10px;
-  border: none;
+  align-items: center;
+  display: flex;
+  justify-content: center;
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
-  align-items: center;
-  display: flex;
-  justify-content: center;
+  background: #f3f3f3;
+  color: #2B3C50;
 }
 
 .btn {
