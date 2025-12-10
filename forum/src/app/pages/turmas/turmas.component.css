@@ -126,7 +126,7 @@ button {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  background: #fff;
+  background: #2B3C50;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -136,6 +136,7 @@ button {
 }
 
 .know-more3 .book-image {
+  background: #fff;
   height: 200px;
   overflow: hidden;
 }
@@ -153,13 +154,13 @@ button {
 .know-more3 .book-content h3 {
   font-size: 1.2rem;
   margin-bottom: 0.6rem;
-  color: var(--secondary-color);
+  color: #fff;
 }
 
 .know-more3 .book-content p {
   font-size: 0.95rem;
   margin-bottom: 1rem;
-  color: var(--text-color);
+  color: #fff;
   line-height: 1.4;
 }
 
