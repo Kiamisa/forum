@@ -185,7 +185,8 @@ a {
   display: flex;
   justify-content: center;
   animation: fadeSlideUp 0.7s ease-out forwards;
-  background-color: #fff;
+  background-color: #2B3C50;
+  color: #fff;
   border-radius: 30px;
   position: fixed;
   bottom: 20px;
@@ -200,4 +201,7 @@ a {
   display: flex;
   justify-content: center;
   animation: fadeSlideUp 0.7s ease-out forwards;
+}
+.likes {
+  padding: 10px;
 }
