@@ -17,7 +17,7 @@ interface LoginRequest {
   providedIn: 'root'
 })
 export class UserService {
-    private apiUrl = 'http://localhost:8080/auth';
+    private apiUrl = 'https://forum-backend.onrender.com/auth';
 
     constructor(private httpClient: HttpClient) {}
 
